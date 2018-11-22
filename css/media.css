@@ -1,0 +1,70 @@
+@media screen and (min-width: 1700px) {
+    .logo {
+        width: 195px;
+        height: 45px;
+    }
+    
+    .logo-title,
+    .nav-item-title {
+        font-size: 20px;
+    }
+
+    .main {
+        max-width: 1700px;
+        width: 100%;
+        height: auto;
+ }
+
+    .article {
+        max-width: 1700px;
+        width: 100%;
+ }
+
+    .img-container {
+        max-width: 1700px;
+        max-height: 700px;
+    }
+
+   .author-name,
+   .article-category {
+       font-size: 16px;
+   }
+
+   .article-title {
+       font-size: 26px;
+   }
+   
+   .article-text {
+       font-size: 20px;
+   }
+   
+   .recipe-page {
+       max-width: 1700px;
+   }
+
+   .recipe-title {
+       font-size: 30px;
+   }
+
+   .bread-crumbs a,
+   .ingredients-item,
+   .recipe-body-article {
+       font-size: 22px;
+   }
+
+   .recipe-body-article {
+    line-height: 2.5;
+   }
+
+   .recipe-image {
+    max-width: 800px;
+    height: 600px;
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .map-container {
+        width: 960px;
+        margin: 0 auto;
+    }
+}

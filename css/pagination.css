@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    margin-left: 40px;
+}
+
+
+
+.pagination-btn {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #5e7e69;
+    color: #fff;
+    margin-right: 20px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+
+.current {
+    background: #0a8934;
+}

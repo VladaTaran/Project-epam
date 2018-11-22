@@ -1,0 +1,102 @@
+.login-page-section {
+    margin-top: 160px;
+    justify-content: center;
+    display: none;
+}
+
+.signup-body {
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}
+
+.signup-title,
+.login-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.signup-items {
+    display: block;
+    border: none;
+    outline:none;
+    font-family: 'Avenir Next Cyr Thin';
+    font-weight: 400;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    background: transparent;
+    border-bottom: 1px solid #AAA;
+    transition: 0.2s ease;
+}
+
+.signup-items:focus {
+    border-bottom: 2px solid #0a8934;
+    transition: 0.2s ease;
+}
+
+.log-out,
+.signup-items:last-child {
+    margin: 28px auto;
+    width: 120px;
+    height: 32px;
+    background: #0a8934;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+.login-form {
+    margin-left: 2%;
+}
+
+.login-title {
+    margin-left: 50px;
+}
+
+.login-button {
+    display: block;
+    font-family: 'Avenir Next Cyr Thin';
+    margin: 0 auto 20px 60px;
+    width: 220px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    font-weight: 500;
+    transition: 0.2s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.signup-items:last-child:hover,
+.login-button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease;
+}
+
+.fb {
+    background: #32508E;
+    margin-top: 40px;
+}
+
+.gl {
+    background: #DD4B39;
+}
+
+.tw {
+    background: #55ACEE;
+}

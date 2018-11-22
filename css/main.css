@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Avenir Next Cyr Thin';
+    src: url('../fonts/AvenirNextCyr-Thin.ttf') format('ttf');
+    src: url('../fonts/AvenirNextCyr-Thin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* max-width: 960px; */
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #f7f7f7;
+
+}

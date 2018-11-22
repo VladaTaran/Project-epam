@@ -1,0 +1,15 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    height: 40px;
+}
+
+.footer-form {
+    display: flex;
+}
+
+.footer-icon {
+    width: 24px;
+    height: auto;
+}

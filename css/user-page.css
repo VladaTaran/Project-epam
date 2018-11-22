@@ -1,0 +1,38 @@
+.user-page {
+    display: none;
+    margin-top: 140px;
+}
+
+.container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.avatar-container {
+    background: url('../img/header-logo-item.png') center center no-repeat;
+    width: 100px;
+    height: 100px;
+}
+
+.saved-recipe,
+.my-posts {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border-right: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+
+.user-page-icon {
+    color: #ffe62c;
+    font-size: 30px;
+}
+
+.user-page-name {
+    display: block;
+    margin: 10px 10px 0 30px;
+}
