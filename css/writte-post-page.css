@@ -1,0 +1,55 @@
+.form-container-wp {
+    justify-content: center;
+    display: flex;
+}
+
+.form-wp {
+    display: block;
+    margin: 0 auto;
+}
+
+.label-wp {
+    display: block;
+    font-family: 'Avenir Next Cyr Thin';
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.label-wp:nth-child(2) {
+    margin-bottom: 0;
+}
+
+.input-title-wp {
+    display: block;
+    width: 600px;
+}
+
+.input-wp {
+    display: block;  
+    width: 600px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.instruction-wp {
+    font-family: 'Avenir Next Cyr Thin';
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.button-wp {
+    margin-left: 20px;
+    width: 120px;
+    height: 32px;
+    background: #0a8934;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+

@@ -44,7 +44,6 @@
     transition: 0.2s ease;
 }
 
-.log-out,
 .signup-items:last-child {
     margin: 28px auto;
     width: 120px;

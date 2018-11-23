@@ -36,3 +36,23 @@
     display: block;
     margin: 10px 10px 0 30px;
 }
+
+.log-out-container {
+    text-align: right;
+}
+
+.log-out {
+    margin: 0 20px 0 0;
+    text-align: center;
+    width: 120px;
+    height: 32px;
+    background: #0a8934;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+}

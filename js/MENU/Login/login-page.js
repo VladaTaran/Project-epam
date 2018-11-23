@@ -104,36 +104,51 @@ function LoginPage () {
     createElements();
 
     function createLoginPage() {
-            if ( loginPageSection.style.display === 'none' ){
+            if ( loginPageSection.style.display === 'none' && localStorage.length == 0 ){
                 recipe.forEach(el => el.style.display = 'none');
                 recipePage.style.display = 'none';
-                aboutPageSection.style.display = 'none';
-                contactsPageSection.style.display = 'none';
-                loginPageSection.style.display = 'flex';                
-            } else {
-                recipePage.style.display = 'none';
-                recipe.forEach(el => el.style.display = 'none');
                 aboutPageSection.style.display = 'none';
                 contactsPageSection.style.display = 'none';
                 loginPageSection.style.display = 'flex';
+                userPageSection.style.display = 'none';  
+
+            } else if ( loginPageSection.style.display === 'none' && localStorage.length > 0) {
+                recipePage.style.display = 'none';
+                recipe.forEach(el => el.style.display = 'none');
+                aboutPageSection.style.display = 'none';
+                contactsPageSection.style.display = 'none';
+                loginPageSection.style.display = 'none';
+                userPageSection.style.display = 'block';  
+                login.innerHTML = 'My Profile';
+
+                    if (!this.container) {
+                        // this.container =  new UserPage (savedName);
+                        loginPageSection.style.display = 'none';
+                        userPageSection.style.display = 'block';
+                    } else {
+                        loginPageSection.style.display = 'none';
+                        userPageSection.style.display = 'block';
+                    }                
             }
             
-            if (savedName) {
-                login.innerHTML = 'My Profile';
-                if (!this.container) {
-                    this.container =  new UserPage (savedName);
-                    loginPageSection.style.display = 'none';
-                    userPageSection.style.display = 'block';
-                } else {
-                    loginPageSection.style.display = 'none';
-                    userPageSection.style.display = 'block';
-                }                
+            // if (savedName) {
+            //     login.innerHTML = 'My Profile';
+            //     if (!this.container) {
+            //         this.container =  new UserPage (savedName);
+            //         loginPageSection.style.display = 'none';
+            //         userPageSection.style.display = 'block';
+            //     } else {
+            //         loginPageSection.style.display = 'none';
+            //         userPageSection.style.display = 'block';
+            //     }                
                 
-            } else {
-                loginPageSection.style.display = 'flex';
-                userPageSection.style.display = 'none';
-                login.innerHTML = 'Login';
-            }
+            // } else {
+            //     loginPageSection.style.display = 'flex';
+            //     userPageSection.style.display = 'none';
+            //     login.innerHTML = 'Login';
+            // }
+
+
             // console.log(savedName);
     }
     // this.breadCrumbs.createBc(loginPageSection, '#login', 'LOGIN');

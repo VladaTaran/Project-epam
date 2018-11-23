@@ -7,6 +7,7 @@
 }
 
 .recipe-page-header {
+    margin-top: 140px;
     display: flex;
     justify-content: space-around;
 }

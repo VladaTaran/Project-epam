@@ -33,7 +33,7 @@ console.log(breadCrMain);
             main.style.display = 'block';
             pagination.style.display = 'flex';
             searchContainer.style.display = 'flex';
-        } else if (userPageSection.style.display !== 'none') {
+        } else if (userPageSection.style.display !== 'none' ) {
             userPageSection.style.display = 'none';
             slider.style.display = 'block';
             main.style.display = 'block';

@@ -53,12 +53,14 @@ const logout = document.querySelector('.log-out');
 // storing input from register-form
 function store() {
     localStorage.setItem('user-name', userName.value);
+   
     console.log(userPassword.value);
     localStorage.setItem('user-password', userPassword.value);
     localStorage.setItem('repeat-password', repeatPassword.value);
     localStorage.setItem('user-email', userEmail.value);
-
+    console.log(userEmail.value);
     checkData(users);
+
 }
 
 //ckeck with json
@@ -75,9 +77,8 @@ function checkData (userData) {
     }
     
     function createUser() {
-        let isExisssts = false;
-        userData.filter(obj => {
-        
+        let isExists = false;
+        userData.forEach(obj => {
             if (obj.userName !== storingName && obj.password !== storingPassword && obj.email !== storingEmail) {
                
                 isExists = true;
@@ -88,21 +89,25 @@ function checkData (userData) {
             }
         });
 
+       const maxId = Math.max.apply(Math, userData.map(el => el.userID));
+
         if (isExists === true) {
-            let userId = userData.length + 1;
-            console.log(userId);
+            let userId = maxId + 1;
             userData.push({
                 'userID': userId,
                 'userName': storingName,
                 'password': storingPassword,
                 'email': storingEmail
-            })
+            });
         }
         
 
         // const myUser = new UserPage();
         return userData;
     }
+    console.log(loginPageSection);
+        loginPageSection.style.display = 'none';
+        userPageSection.style.display = 'block';
 }
 
 signupButton.onclick = store;
