@@ -45,7 +45,7 @@ function SliderStart () {
   
   showPrev.addEventListener('click', onShowPrev);
   showNext.addEventListener('click', onShowNext);
-  setInterval(event => onShowNext(event), 2500);
+  // setInterval(event => onShowNext(event), 2500);
 };
   
 const mySlider = new SliderStart();

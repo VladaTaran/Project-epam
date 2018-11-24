@@ -4,6 +4,7 @@ function Recipe() {
     this.author = null;
 
     this.createElements = function(arr, users) {
+        // console.log(arr[0]);
         arr.forEach(obj => {
             const article = tagCreator('div', main, 'class', 'article', 'id', obj.postID),
                   articleImage = tagCreator('div', article, 'class', 'article-image'),
@@ -32,13 +33,18 @@ function Recipe() {
                 articleText.appendChild(document.createTextNode(myArticleText + '...'));
                 this.readMore = tagCreator('span', articleText,'class', 'read-more');
                 this.readMore.appendChild(document.createTextNode('Read More')); 
+                this.readMore.addEventListener('click', this.recipeClick.showRecipePage);
             } else {
                 articleText.appendChild(document.createTextNode(obj.postBody));
-                };
-                this.recipeClick.createPageElements(obj, this.author.cloneNode(true), category.cloneNode(true));
+            };
+            
+            this.recipeClick.createPageElements(obj, this.author.cloneNode(true), category.cloneNode(true));
 
-                this.readMore.addEventListener('click', this.recipeClick.showRecipePage);
-                title.addEventListener('click', this.recipeClick.showRecipePage);
+            // if (this.readMore) {
+            //     this.readMore.addEventListener('click', this.recipeClick.showRecipePage);
+            // } 
+           
+            title.addEventListener('click', this.recipeClick.showRecipePage);
         });
     }
 }

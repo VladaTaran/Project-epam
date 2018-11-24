@@ -39,6 +39,11 @@
     text-transform: lowercase;
 }
 
+.img-form {
+    display: inline-block;
+    margin-left: 20px;
+}
+
 .button-wp {
     margin-left: 20px;
     width: 120px;
