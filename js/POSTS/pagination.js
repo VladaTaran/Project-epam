@@ -1,8 +1,8 @@
 function Pagination () {
     let currentPageIndex = 1; 
-    // const postsPerPage = 4;
-    const pages = Math.ceil( posts.length/postsPerPage );
-    const article = document.querySelectorAll('.article');
+    let pages = Math.ceil( posts.length/postsPerPage );
+   
+    let article = document.querySelectorAll('.article');
     
     article.forEach(el => el.style.display = 'none');
 
@@ -25,9 +25,9 @@ function Pagination () {
     const intervalAfter = tagCreator('div', pagination, 'class', 'pagination-btn');
     intervalAfter.innerHTML = '...';
     intervalAfter.style.display = 'none';
-    const lastPage = tagCreator('div', pagination, 'class', 'pagination-btn', 'id', 'pg-' + pages);
+    let lastPage = tagCreator('div', pagination, 'class', 'pagination-btn', 'id', 'pg-' + pages);
     lastPage.innerHTML = pages;
-
+    
     firstPage.addEventListener('click', showPage);
     prevPage.addEventListener('click', showPage);
     currentPage.addEventListener('click', showPage);
@@ -46,8 +46,11 @@ function Pagination () {
     }
 
     function showPage () {
+        
+        article = document.querySelectorAll('.article');
         let currentPageElement = document.querySelector('.current');
         currentPageIndex = +this.getAttribute('id').slice(3);
+        // console.log(currentPageElement);
         currentPageElement.classList.remove('current');
         
         if (currentPageIndex === 1) {
@@ -97,6 +100,17 @@ function Pagination () {
             el.style.display  = elPage === currentPageIndex ? 'block' : 'none';
         })
     }
-}
 
-const mainPagination = new Pagination();
+    this.reloadPagination = function() {
+        pages = Math.ceil( posts.length/postsPerPage );
+        lastPage.setAttribute('id', 'pg-' + pages);
+        lastPage.innerHTML = pages;
+        const article = document.querySelectorAll('.article');
+        let newArticle = article[article.length - 1];
+        // console.log(newArticle);
+        const elPage = Math.ceil(newArticle.id/postsPerPage);
+        newArticle.style.display  = elPage === currentPageIndex ? 'block' : 'none';
+    }
+}
+const mainPagination = new Pagination(posts);
+

@@ -85,20 +85,30 @@ function LoginPage () {
                 submit.setAttribute('value', 'Sign up');
                 submit.setAttribute('id', 'sign-up');
                 submit.setAttribute('onclick', 'false');
-                const loginBody = tagCreator('div', loginPageSection, 'class', 'signup-body');
-                const loginForm =  tagCreator('form', loginBody, 'class', 'login-form'),
+
+                const loginForm =  tagCreator('div', loginPageSection, 'class', 'login-form'),
                 loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
                 loginTitle.innerHTML = 'Or';
-                const loginUserName = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'text');
-                loginUserName.setAttribute('placeholder', 'Username');
-                loginUserName.setAttribute('id', 'login-user-name');
-                const loginPassword = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'password');
-                loginPassword.setAttribute('placeholder', 'Password');
-                loginPassword.setAttribute('id', 'login-user-password');
-                const LoginSubmit = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'submit');
-                LoginSubmit.setAttribute('value', 'Log in');
-                LoginSubmit.setAttribute('onclick', 'false');
-                LoginSubmit.setAttribute('id', 'log-in');
+                const buttonFb = tagCreator('button', loginForm, 'class', 'login-button fb'),
+                buttonGoogle = tagCreator('button', loginForm, 'class', 'login-button gl'),
+                buttonTwitter = tagCreator('button', loginForm, 'class', 'login-button tw');
+                buttonFb.innerHTML = 'Log in with facebook';
+                buttonGoogle.innerHTML = 'Log in with Google+';
+                buttonTwitter.innerHTML = 'Log in with Twitter';
+                // const loginBody = tagCreator('div', loginPageSection, 'class', 'signup-body');
+                // const loginForm =  tagCreator('form', loginBody, 'class', 'login-form'),
+                // loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
+                // loginTitle.innerHTML = 'Or';
+                // const loginUserName = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'text');
+                // loginUserName.setAttribute('placeholder', 'Username');
+                // loginUserName.setAttribute('id', 'login-user-name');
+                // const loginPassword = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'password');
+                // loginPassword.setAttribute('placeholder', 'Password');
+                // loginPassword.setAttribute('id', 'login-user-password');
+                // const loginSubmit = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'submit');
+                // loginSubmit.setAttribute('value', 'Log in');
+                // loginSubmit.setAttribute('onclick', 'false');
+                // loginSubmit.setAttribute('id', 'log-in');
 
     }
     createElements();

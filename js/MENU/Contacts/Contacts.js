@@ -13,6 +13,7 @@ function Contacts () {
                 loginPageSection.style.display = 'none';
                 aboutPageSection.style.display = 'none';
                 contactsPageSection.style.display = 'block';
+                breadCrumbs.style.display = 'block';
         
                 this.contactsContainer = tagCreator('div', contactsPageSection, 'class', 'contacts-container'),
                     contactsBody = tagCreator('div', this.contactsContainer, 'class', 'contacts-body'),
@@ -56,11 +57,22 @@ function Contacts () {
                 loginPageSection.style.display = 'none';
                 userPageSection.style.display = 'none';
                 contactsPageSection.style.display = 'block';
-                
+                breadCrumbs.style.display = 'block'; 
             }  
         }
             
-        this.breadCrumbs.createBc(breadCrumbs, '#contact-us', 'CONTACTS');
+        this.breadCrumbs.createBc('#contact-us', 'CONTACTS');
+
+        // const myBreadCrumbsFormer = document.querySelectorAll('.bc-former');
+        // myBreadCrumbsFormer.forEach(el => {
+        //     if(el.id.slice(3).toUpperCase() !== 'CONTACTS') {
+                
+        //         el.style.display = 'none';
+        //     } else {
+        //         el.style.display = 'block';
+        //     }
+        // } )
+        
     }
     
     const contactUsPage = new Contacts();

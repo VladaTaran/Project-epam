@@ -2,7 +2,10 @@ function UserPage() {
     // this.createElement = function(name) {
         loginPageSection.style.display = 'none';
         userPageSection.style.display = 'none';
+        
         const logoutContainer = tagCreator('div', userPageSection, 'class', 'log-out-container', 'type', 'submit');
+        const backBtn = tagCreator('button', logoutContainer, 'class', 'button-wp hide', 'id', 'back-wp');
+        backBtn.innerHTML = 'Back to profile';
         const logOut = tagCreator('button', logoutContainer, 'class', 'log-out','value', 'Log out');
         logOut.innerHTML = 'Log out';
         const container = tagCreator('div', userPageSection, 'class', 'container');
@@ -27,6 +30,7 @@ function UserPage() {
         delete localStorage['user-password'];
         delete localStorage['repeat-password'];
         delete localStorage['user-email'];
+        delete localStorage['user-id'];
         // console.log(localStorage);
     }
     // console.log(localStorage);

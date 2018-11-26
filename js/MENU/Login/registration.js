@@ -41,30 +41,28 @@ const userName = document.querySelector('#user-name'),
       
       repeatPassword = document.querySelector('#user-password-repeat'),
       userEmail = document.querySelector('#user-email'),
-      signupButton = document.querySelector('#sign-up'),
+      signupButton = document.querySelector('#sign-up');
 
-      loginUserName = document.querySelector('#login-user-name'),
-      loginPassword = document.querySelector('#login-user-password'),
-      loginButton = document.querySelector('#log-in');
-      console.log(userPassword)
+    //   loginUserName = document.querySelector('#login-user-name'),
+    //   loginPassword = document.querySelector('#login-user-password'),
+    //   loginButton = document.querySelector('#log-in');
+    //   console.log(userPassword)
 
 const logout = document.querySelector('.log-out');
-
+// console.log(logout);
 // storing input from register-form
 function store() {
     localStorage.setItem('user-name', userName.value);
-   
-    console.log(userPassword.value);
     localStorage.setItem('user-password', userPassword.value);
     localStorage.setItem('repeat-password', repeatPassword.value);
     localStorage.setItem('user-email', userEmail.value);
-    console.log(userEmail.value);
+  
     checkData(users);
 
 }
 
 //ckeck with json
-function checkData (userData) {
+function checkData (users) {
     let storingName = localStorage.getItem('user-name');
     let storingPassword = localStorage.getItem('user-password');
     let storingRepeatPassword = localStorage.getItem('repeat-password');
@@ -72,47 +70,48 @@ function checkData (userData) {
 
     if (storingPassword === storingRepeatPassword) {
         createUser();
+        loginPageSection.style.display = 'none';
+        userPageSection.style.display = 'block';
     } else {
         alert('Please, make sure the password you entered is the same');
     }
     
     function createUser() {
         let isExists = false;
-        userData.forEach(obj => {
+        users.forEach(obj => {
             if (obj.userName !== storingName && obj.password !== storingPassword && obj.email !== storingEmail) {
-               
-                isExists = true;
+                isExists = false;
                 return isExists;
             } else {
-                isExists = false;
+                isExists = true;
                 return isExists;
             }
         });
 
-       const maxId = Math.max.apply(Math, userData.map(el => el.userID));
+       const maxId = Math.max.apply(Math, users.map(el => el.userID));
 
-        if (isExists === true) {
+        if (isExists === false) {
             let userId = maxId + 1;
-            userData.push({
-                'userID': userId,
-                'userName': storingName,
-                'password': storingPassword,
-                'email': storingEmail
+            users.push({
+                userID: userId,
+                userName: storingName,
+                password: storingPassword,
+                email: storingEmail,
+                authorHref: '#',
+                userAvatarSrc: "../img/user-avatar.png",
             });
         }
-        
-
         // const myUser = new UserPage();
-        return userData;
+        return users;
     }
-    console.log(loginPageSection);
-        loginPageSection.style.display = 'none';
-        userPageSection.style.display = 'block';
+    
+        // loginPageSection.style.display = 'none';
+        // userPageSection.style.display = 'block';
 }
 
 signupButton.onclick = store;
 
-console.log(users);
+
 
 // logout.addEventListener('click', deletData);
 

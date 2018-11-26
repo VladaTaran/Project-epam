@@ -2,6 +2,8 @@ const users = [
     {
         userID: 1,
         userName: "Admin",
+        password: '000',
+        email: 'admin@gmail.com',
         authorHref: 'https://www.google.com/',
         userAvatarSrc: "../img/avatar.png"
     },
@@ -16,6 +18,8 @@ const users = [
     {
         userID: 3,
         userName: "CASTELLO",
+        password: '888',
+        email: 'castello@gmail.com',
         authorHref: '#',
         userAvatarSrc: "../img/lama-avatar.jpg"
     }
