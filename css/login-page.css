@@ -1,7 +1,10 @@
 .login-page-section {
-    margin-top: 160px;
-    justify-content: center;
     display: none;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
 }
 
 .signup-body {

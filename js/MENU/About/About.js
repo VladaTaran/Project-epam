@@ -1,11 +1,8 @@
 function AboutPage () {
-    this.breadCrumbs = new BreadCrumbs();
-    this.about = document.querySelector('#about');
     this.headerAbout = null;
-    this.about.addEventListener('click', aboutPageElements);
+    about.addEventListener('click', aboutPageElements);
      
     function aboutPageElements() {
-        // const recipe = document.querySelectorAll('.recipe');
         if ( !this.headerAbout ) {
         
             recipe.forEach(el => el.style.display = 'none');
@@ -14,8 +11,10 @@ function AboutPage () {
             contactsPageSection.style.display = 'none';
             userPageSection.style.display = 'none';
             aboutPageSection.style.display = 'block';
-            breadCrumbs.style.display = 'block';
     
+            const breadCrumbs = new BreadCrumbs();
+            breadCrumbs.createBc(aboutPageSection, about.textContent.toUpperCase() );
+
             this.headerAbout = tagCreator('div', aboutPageSection, 'class', 'header-about'),
                 mainAbout = tagCreator('div', aboutPageSection, 'class', 'main-about'),
                 gallery = tagCreator('div', aboutPageSection, 'class', 'gallery'),
@@ -45,35 +44,11 @@ function AboutPage () {
             recipePage.style.display = 'none';
             recipe.forEach(el => el.style.display = 'none');
             aboutPageSection.style.display = 'block';
-            breadCrumbs.style.display = 'block';
             loginPageSection.style.display = 'none';
             contactsPageSection.style.display = 'none';
             userPageSection.style.display = 'none';
         }  
     }
-        
-    this.breadCrumbs.createBc('#about-us', 'ABOUT');
-    // console.log(this.breadCrumbs.breadCrumbsFormer.id.slice(3).toUpperCase());
-    // if (this.breadCrumbs.breadCrumbsFormer.id.slice(3).toUpperCase() !== 'ABOUT') {
-    //         // console.log(this.breadCrumbs.breadCrumbsFormer)
-    //     this.breadCrumbs.breadCrumbsFormer.style.display = 'none';
-    //     } else {
-    //         this.breadCrumbs.breadCrumbsFormer.style.display = 'block';
-    //     }
-    
-    // this.bcFunc = function() {
-    //     const myBreadCrumbsFormer = document.querySelectorAll('.bc-former');
-    //     myBreadCrumbsFormer.forEach(el => {
-    //         if(el.id.slice(3).toUpperCase() === 'ABOUT') {
-    //             console.log(el.id )
-    //             el.style.display = 'block';
-    //         } else {
-    //             el.style.display = 'none';
-    //         }
-    //     })
-    // }
-    // console.log(myBreadCrumbsFormer);
 }
 
 const aboutPage = new AboutPage();
-// aboutPage.bcFunc();
