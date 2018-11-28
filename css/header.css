@@ -46,10 +46,11 @@
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
+    margin-right: 10px;
 }
 
 .nav-item-title {
-    border-right: 1px solid #000;
+    border-right: 1px solid #000; 
     padding-right: 10px;
 }
 

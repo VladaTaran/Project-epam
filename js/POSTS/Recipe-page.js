@@ -4,11 +4,8 @@ function RecipePage() {
     this.createPageElements = function (obj,author,category ) {
             recipePage.style.display = 'none';
             this.recipePageContainer = tagCreator('div', recipePage, 'class', 'recipe-page-container');
-            const breadCrumbs = tagCreator('div', this.recipePageContainer, 'class', 'bread-crumbs'),
-                  mainBreadCrumbs = tagCreator('a', breadCrumbs, 'href', '#food-slider');
-            mainBreadCrumbs.innerHTML = 'MAIN/ ';
-            const currentCategory = tagCreator('a', breadCrumbs, 'href', '#header');
-            currentCategory.innerHTML = obj.category;
+            const breadCrumbs = new BreadCrumbs();
+            breadCrumbs.createBc(this.recipePageContainer, obj.category.toUpperCase(), 'THEME/ ' );
 
             const recipePageHeader = tagCreator('div', this.recipePageContainer, 'class', 'recipe-page-header'),
                   ingredientsContainer = tagCreator('div', recipePageHeader, 'class', 'ingredients-container'),

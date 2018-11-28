@@ -11,9 +11,11 @@ function UserPage() {
         
     const userInfo = tagCreator('div', container, 'class', 'user-info'),
           avatarContainer = tagCreator('div', userInfo, 'class', 'avatar-container');
-            //   avatar = tagCreator('img', container, 'class', 'avatar');
+         
+            //TODO вынести создание имени в отдельную функцию.
     const loggedName =  tagCreator('span', userInfo, 'class', 'user-page-name');
           loggedName.innerHTML = localStorage.getItem('user-name');
+
     const savedRecipe = tagCreator('div', container, 'class', 'saved-recipe'),
           savedRecipeIcon = tagCreator('span', savedRecipe, 'class', 'user-page-icon');
           savedRecipeIcon.innerHTML = '&#9733;';
@@ -31,6 +33,7 @@ function UserPage() {
         delete localStorage['user-email'];
         delete localStorage['user-id'];
     }
+
     logOut.onclick = deletData;
 }
 

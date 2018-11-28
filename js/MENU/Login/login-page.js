@@ -28,59 +28,59 @@ function LoginPage () {
         submit.setAttribute('id', 'sign-up');
         submit.setAttribute('onclick', 'false');
 
-        const loginForm =  tagCreator('div', formDiv, 'class', 'login-form'),
-        loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
-        loginTitle.innerHTML = 'Or';
-        const buttonFb = tagCreator('button', loginForm, 'class', 'login-button fb'),
-        buttonGoogle = tagCreator('button', loginForm, 'class', 'login-button gl'),
-        buttonTwitter = tagCreator('button', loginForm, 'class', 'login-button tw');
-        buttonFb.innerHTML = 'Log in with facebook';
-        buttonGoogle.innerHTML = 'Log in with Google+';
-        buttonTwitter.innerHTML = 'Log in with Twitter';
-                // const loginBody = tagCreator('div', loginPageSection, 'class', 'signup-body');
-                // const loginForm =  tagCreator('form', loginBody, 'class', 'login-form'),
-                // loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
-                // loginTitle.innerHTML = 'Or';
-                // const loginUserName = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'text');
-                // loginUserName.setAttribute('placeholder', 'Username');
-                // loginUserName.setAttribute('id', 'login-user-name');
-                // const loginPassword = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'password');
-                // loginPassword.setAttribute('placeholder', 'Password');
-                // loginPassword.setAttribute('id', 'login-user-password');
-                // const loginSubmit = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'submit');
-                // loginSubmit.setAttribute('value', 'Log in');
-                // loginSubmit.setAttribute('onclick', 'false');
-                // loginSubmit.setAttribute('id', 'log-in');
+        // const loginForm =  tagCreator('div', formDiv, 'class', 'login-form');
+        // loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
+        // loginTitle.innerHTML = 'Or';
+        // const buttonFb = tagCreator('button', loginForm, 'class', 'login-button fb'),
+        // buttonGoogle = tagCreator('button', loginForm, 'class', 'login-button gl'),
+        // buttonTwitter = tagCreator('button', loginForm, 'class', 'login-button tw');
+        // buttonFb.innerHTML = 'Log in with facebook';
+        // buttonGoogle.innerHTML = 'Log in with Google+';
+        // buttonTwitter.innerHTML = 'Log in with Twitter';
+                const loginBody = tagCreator('div', formDiv, 'class', 'signup-body');
+                const loginForm =  tagCreator('form', loginBody, 'class', 'login-form'),
+                loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
+                loginTitle.innerHTML = 'Or';
+                const loginUserName = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'text');
+                loginUserName.setAttribute('placeholder', 'Username or email');
+                loginUserName.setAttribute('id', 'login-user-name');
+                const loginPassword = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'password');
+                loginPassword.setAttribute('placeholder', 'Password');
+                loginPassword.setAttribute('id', 'login-user-password');
+                const loginSubmit = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'submit');
+                loginSubmit.setAttribute('value', 'Log in');
+                loginSubmit.setAttribute('onclick', 'false');
+                loginSubmit.setAttribute('id', 'log-in');
 
     }
     createElements();
 
     function createLoginPage() {
-            if ( loginPageSection.style.display === 'none' && localStorage.length == 0 ){
-                recipe.forEach(el => el.style.display = 'none');
-                recipePage.style.display = 'none';
-                aboutPageSection.style.display = 'none';
-                contactsPageSection.style.display = 'none';
-                loginPageSection.style.display = 'block';
-                userPageSection.style.display = 'none';  
+        if ( loginPageSection.style.display === 'none' && !localStorage.getItem('user-name') ){
+            recipe.forEach(el => el.style.display = 'none');
+            recipePage.style.display = 'none';
+            aboutPageSection.style.display = 'none';
+            contactsPageSection.style.display = 'none';
+            loginPageSection.style.display = 'block';
+            userPageSection.style.display = 'none';  
 
-            } else if ( loginPageSection.style.display === 'none' && localStorage.length > 0) {
-                recipePage.style.display = 'none';
-                recipe.forEach(el => el.style.display = 'none');
-                aboutPageSection.style.display = 'none';
-                contactsPageSection.style.display = 'none';
+        } else if ( loginPageSection.style.display === 'none' && localStorage.getItem('user-name')) {
+            recipePage.style.display = 'none';
+            recipe.forEach(el => el.style.display = 'none');
+            aboutPageSection.style.display = 'none';
+            contactsPageSection.style.display = 'none';
+            loginPageSection.style.display = 'none';
+            userPageSection.style.display = 'block';  
+            login.innerHTML = 'My Profile';
+
+            if (!this.container) {
                 loginPageSection.style.display = 'none';
-                userPageSection.style.display = 'block';  
-                login.innerHTML = 'My Profile';
-
-                    if (!this.container) {
-                        loginPageSection.style.display = 'none';
-                        userPageSection.style.display = 'block';
-                    } else {
-                        loginPageSection.style.display = 'none';
-                        userPageSection.style.display = 'block';
-                    }                
-            }
+                userPageSection.style.display = 'block';
+            } else {
+                loginPageSection.style.display = 'none';
+                userPageSection.style.display = 'block';
+            }                
+        }
     }
 }
 

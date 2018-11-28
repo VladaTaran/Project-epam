@@ -73,6 +73,129 @@
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 620px) {
+    .search-container  {
+        display: block;
+        margin: 20px auto;
+        
+    }
+
+    .search {
+        display: block;
+        margin: 20px;
+        text-align: center;
+    } 
+
+    .search-input,
+    .category {
+        width: 150px;
+    }
+
+    .main {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column; 
+    }
+    
+    .gallery-first-block, 
+    .gallery-second-block {
+        flex-wrap: wrap;
+    }
+    
+    
+    .signup-body {
+        display: block;
+        text-align: center;
+    }
+    
+    .contacts-form,
+    .search-container,
+    .recipe-page-header,
+    .form-container  {
+        display: block;
+    }
+
+    .signup-form > input,
+    .login-form > input {
+        margin: 0 auto;
+    }
+    
+    .signup-items:last-child {
+        margin: 20px auto;
+    }
+
+
+    #login-user-name,
+    #log-in {
+        margin-top: 20px;
+    }
+
+    .login-title,
+    .login-form {
+        margin: 0;
+    }
+
+    .contacts-text {
+        margin: 20px;
+    }
+
+    .contacts-input {
+        max-width: 320px;
+    }
+
+    /* #mapDiv, 
+    iframe, 
+    .gm-inset, .gm-style,
+    .gm-style > div,
+    .gm-inset-hover-enabled,
+    #mapDiv > div {
+        max-width: 320px;
+    } */
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        height: 80px;
+    }
+
+    .map, #mapDiv, 
+    iframe, {
+        display: none;
+    }
+
+    .article-image img {
+        height: 300px;
+    }
+
+    .article-text {
+        overflow: scroll; 
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .nav-burger-icon {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: block;  
+    }
+    
+    .nav-menu .responsive {position: relative;}
+    .nav-menu .responsive .nav-burger-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nav-menu.responsive >.nav-item {
+      float: none;
+      display: block;
+      text-align: left;
+    }
 
 }

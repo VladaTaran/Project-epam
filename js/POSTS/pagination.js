@@ -1,3 +1,5 @@
+// let article = document.querySelectorAll('.article');
+
 function Pagination () {
     let currentPageIndex = 1; 
     let pages = Math.ceil( posts.length/postsPerPage );
@@ -44,6 +46,7 @@ function Pagination () {
             intervalAfter.style.display = 'block';       
             lastPage.style.display = 'block';
     }
+
 
     function showPage () {
         
@@ -103,12 +106,24 @@ function Pagination () {
 
     this.reloadPagination = function() {
         pages = Math.ceil( posts.length/postsPerPage );
+        // TODO remove dublicates
+        let currentPageElement = document.querySelector('.current');
+        
+        console.log(pages);
+        if(lastPage.classList.contains('current')) {
+            console.log(currentPageElement);
+            lastPage.classList.remove('current');
+            currentPage.classList.add('current');
+            currentPage.style.display = 'block';
+            currentPage.innerHTML = +currentPageElement.textContent;
+        }
         lastPage.setAttribute('id', 'pg-' + pages);
         lastPage.innerHTML = pages;
-        const article = document.querySelectorAll('.article');
+        article = document.querySelectorAll('.article');
         let newArticle = article[article.length - 1];
-        // console.log(newArticle);
+        
         const elPage = Math.ceil(newArticle.id/postsPerPage);
+      
         newArticle.style.display  = elPage === currentPageIndex ? 'block' : 'none';
     }
 }

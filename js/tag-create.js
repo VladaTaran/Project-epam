@@ -6,6 +6,7 @@ const tagCreator = function (tag, parent, key, value, anotherKay, anotherValue )
     }
     return parent.appendChild(newTag);
 }
+
 const main = document.querySelector('.main');
 const recipe = document.querySelectorAll('.recipe');
 const about = document.querySelector('#about');
@@ -19,8 +20,6 @@ const contactsPageSection = document.querySelector('.contacts-page');
 const contacts = document.querySelector('#contacts');
 const userPageSection = document.querySelector('.user-page');
 const pagination = document.querySelector('.pagination');
-
 const postsPerPage = 4;
-
-
-console.log(main.parentNode)
+const logo = document.querySelector('.logo');
+const backHome = document.querySelector('#home');
