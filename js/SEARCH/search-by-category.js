@@ -1,7 +1,8 @@
 function SearchByCategory() {
     const searchForm = tagCreator('form', searchContainer, 'class', 'search', 'id', 'search-category'),
-          select = tagCreator('select', searchForm, 'class', 'category', 'name', 'category'),
-          defaultOption = tagCreator('option', select, 'class', 'option', 'value', 'All');
+          select = tagCreator('select', searchForm, 'class', 'category', 'name', 'category');
+          select.setAttribute('id', 'select-main')
+    const defaultOption = tagCreator('option', select, 'class', 'option', 'value', 'All');
           defaultOption.innerHTML = 'All';
     // const postsPerPage = 4;
     this.createOptionCategory = function(arr) {

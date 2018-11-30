@@ -1,5 +1,3 @@
-// let article = document.querySelectorAll('.article');
-
 function Pagination () {
     let currentPageIndex = 1; 
     let pages = Math.ceil( posts.length/postsPerPage );
@@ -47,13 +45,11 @@ function Pagination () {
             lastPage.style.display = 'block';
     }
 
-
     function showPage () {
         
         article = document.querySelectorAll('.article');
         let currentPageElement = document.querySelector('.current');
         currentPageIndex = +this.getAttribute('id').slice(3);
-        // console.log(currentPageElement);
         currentPageElement.classList.remove('current');
         
         if (currentPageIndex === 1) {
@@ -110,8 +106,7 @@ function Pagination () {
         let currentPageElement = document.querySelector('.current');
         
         console.log(pages);
-        if(lastPage.classList.contains('current')) {
-            console.log(currentPageElement);
+        if(lastPage.classList.contains('current') && posts.length % postsPerPage === 1) {
             lastPage.classList.remove('current');
             currentPage.classList.add('current');
             currentPage.style.display = 'block';

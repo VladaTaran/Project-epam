@@ -91,31 +91,46 @@ function checkData (users) {
     let storingRepeatPassword = localStorage.getItem('repeat-password');
     let storingEmail = localStorage.getItem('user-email');
     let isExists = false;
+    let isValidEmail = false;
+
+    if (!storingEmail.match(regEx)) {
+        alert ('Please write correct email');
+        delete localStorage['user-name'];
+        delete localStorage['user-email'];
+        userEmail.classList.add('red-input');
+        userEmail.onclick = function () {
+            userEmail.classList.remove('red-input');
+        }
+    } else {
+        isValidEmail = true;
+    }
+
     users.forEach(obj => {
         if (obj.userName === storingName) {
             isExists = true;
             delete localStorage['user-name'];
+            delete localStorage['user-email'];
             alert('Please choose another name');
         }
         if( obj.email === storingEmail ) {
             isExists = true;
             delete localStorage['user-email'];
+            delete localStorage['user-name'];
             alert ('User with this email is already registered. Please LOGIN or choose another email');
-        }       
+        }     
         return isExists;
     });
-
-    if (isExists===true) {
-    }
-    else if (storingPassword === storingRepeatPassword ) {
+ 
+    if (isExists || !isValidEmail) {
+    } else if (storingPassword === storingRepeatPassword  ) {
         createUser();
         localStorage.setItem('users-arr', JSON.stringify(usersInStorage) );
         loginPageSection.style.display = 'none';
         userPageSection.style.display = 'block';
     } else {
         alert('Please, make sure the password you entered is the same');
-    }
-   
+    } 
+    
     
     function createUser() {
        const maxId = Math.max.apply(Math, users.map(el => el.userID));

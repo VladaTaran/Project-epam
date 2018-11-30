@@ -62,3 +62,7 @@
 .no-internet {
     background: url('../img/Contacts/map_web.jpg') center center no-repeat; 
 }
+
+.red-input {
+    background: #f3686f;
+}

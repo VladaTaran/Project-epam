@@ -221,9 +221,7 @@ function myPosts () {
 
 
         function savingPost() {
-    
             let selectedValue = categorySelectWp.options[categorySelectWp.selectedIndex].value;
-            // const id = main.childNodes.length + 1;
             const id = Math.max.apply(Math, posts.map(el => el.postID)) + 1;
             
             const userIdInPost = users.filter(el => el.userName===localStorage.getItem('user-name'))[0].userID;
@@ -238,7 +236,7 @@ function myPosts () {
                 href: '#',
                 title: inputTitle.value,
                 postBody: contentRecipe.value,
-                ingredients:[ inputIngredients.value, 'some ingredients'],
+                ingredients: inputIngredients.value.split(', '),
             };
             
             const userInform = users.filter(el => {
