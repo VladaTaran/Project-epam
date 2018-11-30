@@ -25,6 +25,7 @@
     cursor: pointer;
     text-align: center;
     align-items: center;
+    margin-right: 20px;
 }
 
 .user-page-icon {
@@ -42,9 +43,9 @@
 }
 
 .log-out {
-    margin: 0 20px 0 0;
+    margin: 0 20px 0 auto;
     text-align: center;
-    width: 120px;
+    width: 150px;
     height: 32px;
     background: #0a8934;
     border: none;
@@ -54,5 +55,4 @@
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
-}
 }

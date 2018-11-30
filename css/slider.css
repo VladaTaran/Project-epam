@@ -1,12 +1,11 @@
 .food-slider {
     display: block;
-    margin-top: 120px;
+    margin-top: 140px;
 }
 
 .img-container {
     display: block;
     position: relative;
-    /* max-width: 960px; */
     margin: 0 auto;
     overflow: hidden;
     padding-top: 30%;

@@ -9,11 +9,16 @@
         font-size: 20px;
     }
 
-    .main {
+    .main,
+    .pagination {
         max-width: 1700px;
         width: 100%;
         height: auto;
  }
+
+    .pagination {
+        margin: 0 auto;
+    } 
 
     .article {
         max-width: 1700px;
@@ -37,7 +42,7 @@
    .article-text {
        font-size: 20px;
    }
-   
+
    .recipe-page {
        max-width: 1700px;
    }
@@ -52,6 +57,7 @@
        font-size: 22px;
    }
 
+
    .recipe-body-article {
     line-height: 2.5;
    }
@@ -59,6 +65,10 @@
    .recipe-image {
     max-width: 800px;
     height: 600px;
+    }
+
+    .footer-icon {
+        width: 40px;
     }
 }
 
@@ -73,7 +83,11 @@
     }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 680px) {
+    .image-link {
+        height: 30px;
+    }
+
     .search-container  {
         display: block;
         margin: 20px auto;
@@ -97,12 +111,34 @@
         flex-wrap: wrap;
         flex-direction: column; 
     }
-    
+
+    .bread-crumbs {
+        margin: 100px 0 20px 20px;
+   }
+
+   .recipe-page-container {
+        display: block;
+        margin: 0 20px;
+   }
+
+   .recipe-title {
+        font-size: 20px;
+        text-align: center;
+   }
+
+   .ingredients-item {
+        margin-left: 20px;
+   }
+
+   .recipe-image {
+        display: block;
+        margin: 0 auto;
+}
+
     .gallery-first-block, 
     .gallery-second-block {
         flex-wrap: wrap;
     }
-    
     
     .signup-body {
         display: block;
@@ -112,19 +148,21 @@
     .contacts-form,
     .search-container,
     .recipe-page-header,
-    .form-container  {
+    .form-container,
+    .input-img,
+    .button-wp  {
         display: block;
     }
 
     .signup-form > input,
-    .login-form > input {
+    .login-form > input,
+    .button-wp {
         margin: 0 auto;
     }
     
     .signup-items:last-child {
         margin: 20px auto;
     }
-
 
     #login-user-name,
     #log-in {
@@ -134,6 +172,39 @@
     .login-title,
     .login-form {
         margin: 0;
+    }
+
+    .input-wp,
+    .input-title-wp {
+        width: 300px;
+    }
+
+    .form-wp > select {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .input-img {
+        margin: 20px auto 20px;
+        width: 150px;
+    }
+
+    .button-wp {
+        width: 150px;
+    }
+
+    .log-out,
+    #back-wp {
+        display: block;
+        margin: 0 0 20px auto;
+    }
+
+    .user-page {
+        margin-top: 100px;
+    }
+
+    .saved-recipe {
+        margin-right: 20px;
     }
 
     .contacts-text {
@@ -152,11 +223,6 @@
     #mapDiv > div {
         max-width: 320px;
     } */
-    .nav {
-        display: flex;
-        flex-direction: column;
-    }
-
     .header {
         height: 80px;
     }
@@ -170,32 +236,88 @@
         height: 300px;
     }
 
+    .article-title {
+        font-size: 16px;
+    }
+
     .article-text {
         overflow: scroll; 
+        height: 70px;
     }
 
-    .nav-item {
-        display: none;
+    .article-category {
+        margin: 10px 30px 0 0;
     }
 
-    .nav-burger-icon {
+    .hamburger {
+        right: 0;
+        width: 50px;
+        margin-top: 20px;
+        font-weight: bold;
+        display: flex;
+        z-index: 2;
+        position: absolute;
+        text-align: center;
+        line-height: 1;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    .nav.open .nav-menu {
         display: block;
-    }
-    
-    .nav-menu {
-        display: block;  
-    }
-    
-    .nav-menu .responsive {position: relative;}
-    .nav-menu .responsive .nav-burger-icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .nav-menu.responsive >.nav-item {
-      float: none;
-      display: block;
-      text-align: left;
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        background: rgb(255, 255, 255, 0.7);
+        height: 200px;
+        text-align: right;
+        border-radius: 8px;
     }
 
+    .nav.open .nav-menu .nav-item-title {
+        font-size: 16px;
+        line-height: 2;
+        text-align: center;
+    }
+
+    .nav-menu {
+        margin: 0;
+        list-style: none;
+        padding-left: 20px;
+        display: none;
+    }    
+
+    .theme:hover .nav-submenu {
+        position: relative;
+        right: 30px;
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+    }
+
+    .footer-form {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-input,
+    .footer-button,
+    .footer-icons {
+        margin-bottom: 20px;
+    }
+
+    .footer-icons {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-link {
+        text-decoration: none;
+    }
+    
 }

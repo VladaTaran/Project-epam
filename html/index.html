@@ -4,23 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/bread-crumbs.css">
-    <link rel="stylesheet" href="../css/about-page.css">
-    <link rel="stylesheet" href="../css/login-page.css">
-    <link rel="stylesheet" href="../css/user-page.css">
-    <link rel="stylesheet" href="../css/contacts-page.css">
-    <link rel="stylesheet" href="../css/slider.css">
-    <link rel="stylesheet" href="../css/search-block.css">
-    <link rel="stylesheet" href="../css/main-content.css">
-    <link rel="stylesheet" href="../css/pagination.css">
-    <link rel="stylesheet" href="../css/recipe-page.css">
-    <link rel="stylesheet" href="../css/writte-post-page.css">
-    <link rel="stylesheet" href="../css/burger-menu.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/import-styles.css">
     <title>Food Blog</title>
 </head>
 <body>
@@ -30,7 +14,8 @@
                     <span class="logo-title">Salt & Pepper</span>
                 </a>
         </div>
-        <nav class="nav">
+        <nav class="nav" id='nav'>
+            <div class="hamburger" id="hamburger">&hellip;</div>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#" class="nav-item-title" id="home">Home</a>
@@ -87,9 +72,15 @@
                 </button>
             </form>
             <div class="footer-icons">
-                <img src="../icons/facebook-brands.svg" alt="facebook-icons" class="footer-icon">
-                <img src="../icons/instagram-brands.svg" alt="instagram-icons" class="footer-icon">
-                <img src="../icons/pinterest-square-brands.svg" alt="instagram-icons" class="footer-icon">
+                <a href="https://www.facebook.com/" class="footer-link">
+                    <img src="../img/icons/facebook-outline-512.png" alt="facebook-icons" class="footer-icon">
+                </a>
+                <a href="https://www.instagram.com/" class="footer-link">
+                    <img src="../img/icons/instagram.png" alt="instagram-icons" class="footer-icon">
+                </a>
+                <a href="https://www.pinterest.com/" class="footer-link">
+                    <img src="../img/icons/pinterest-icon-15.png" alt="instagram-icons" class="footer-icon">
+                </a>
             </div>
         </div>
      </footer>
@@ -107,6 +98,7 @@
     <script src="../js/MENU/About/About.js"></script>
 
     <script src="../js/MENU/Contacts/Contacts.js"></script>
+    <script src="../js/MENU/Contacts/Form-handler.js"></script>
     <script src="../js/SLIDER/slider-data.js"></script>
     <script src="../js/SLIDER/Slider.js"></script>
     <script src="../js/SLIDER/Start_slider.js"></script>
@@ -121,11 +113,10 @@
    
     <script src="../js/MENU/Login/login-page.js"></script>
     <script src="../js/MENU/Login/registration.js"></script>
-    <script src="../js/MENU/Login/user-page.js"></script>
-    <!-- <script src="../js/MENU/Login/registration.js"></script> -->
+    <script src="../js/MENU/Login/User-page/user-page.js"></script>
     
-    <script src="../js/MENU/Login/my-posts.js"></script>
-    <script src="../js/MENU/Login/user-exists-login.js"></script>
+    <script src="../js/MENU/Login/User-page/my-posts.js"></script>
+    <script src="../js/MENU/Login/User-page/user-exists-login.js"></script>
     
     <script src="../js/MENU/burger-menu.js"></script>
 

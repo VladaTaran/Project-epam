@@ -1,8 +1,11 @@
 .main {
     padding-top: 40px;
-    /* max-width: 960px; */
     width: 100%;
     margin: 0 auto;
+}
+
+.hamburger {
+    display: none;
 }
 
 .article {
