@@ -37,6 +37,7 @@
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
+    outline: none;
 }
 
 .footer-icon {

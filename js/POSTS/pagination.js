@@ -1,6 +1,6 @@
 function Pagination () {
     let currentPageIndex = 1; 
-    let pages = Math.ceil( posts.length/postsPerPage );
+    let pages = Math.ceil( allPosts.length/postsPerPage );
    
     let article = document.querySelectorAll('.article');
     
@@ -37,11 +37,12 @@ function Pagination () {
         if (pages === 2) {
             lastPage.innerHTML = '2';
         }
+
         if (pages > 2) {
             nextPage.innerHTML = '2';
             nextPage.setAttribute('id', 'pg-' + (currentPageIndex + 1));
             nextPage.style.display = 'block';
-            intervalAfter.style.display = 'block';       
+            intervalAfter.style.display = pages == 3 ? 'none' : 'block';       
             lastPage.style.display = 'block';
     }
 
@@ -59,12 +60,12 @@ function Pagination () {
             nextPage.innerHTML = currentPageIndex + 1;
             nextPage.setAttribute('id', 'pg-' + (currentPageIndex + 1));
             currentPage.style.display = 'none';
-            intervalAfter.style.display = 'block';
+            intervalAfter.style.display = pages == 3 ? 'none' : 'block';
             firstPage.classList.add('current');
             
         } else if (currentPageIndex === pages) {
             prevPage.style.display = 'block';
-            intervalBefore.style.display = 'block';
+            intervalBefore.style.display = pages == 3 ? 'none' : 'block';
             nextPage.style.display = 'none';
             currentPage.style.display = 'none';
             intervalAfter.style.display = 'none';
@@ -101,12 +102,11 @@ function Pagination () {
     }
 
     this.reloadPagination = function() {
-        pages = Math.ceil( posts.length/postsPerPage );
+        pages = Math.ceil( allPosts.length/postsPerPage );
         // TODO remove dublicates
         let currentPageElement = document.querySelector('.current');
         
-        console.log(pages);
-        if(lastPage.classList.contains('current') && posts.length % postsPerPage === 1) {
+        if(lastPage.classList.contains('current') && allPosts.length % postsPerPage === 1) {
             lastPage.classList.remove('current');
             currentPage.classList.add('current');
             currentPage.style.display = 'block';
@@ -122,5 +122,5 @@ function Pagination () {
         newArticle.style.display  = elPage === currentPageIndex ? 'block' : 'none';
     }
 }
-const mainPagination = new Pagination(posts);
+const mainPagination = new Pagination(allPosts);
 

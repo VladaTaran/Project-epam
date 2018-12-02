@@ -52,3 +52,9 @@
     background-position: center;
     margin: 5px;
 }
+
+.image-about-gallery:hover {
+    width: 350px;
+    height: 350px;
+    transition: all .7s ease-in;
+}

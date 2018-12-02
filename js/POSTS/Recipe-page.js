@@ -1,40 +1,40 @@
 function RecipePage() {
     this.recipePageContainer = null; 
     
-    this.createPageElements = function (obj,author,category ) {
-            recipePage.style.display = 'none';
-            this.recipePageContainer = tagCreator('div', recipePage, 'class', 'recipe-page-container');
-            const breadCrumbs = new BreadCrumbs();
-            breadCrumbs.createBc(this.recipePageContainer, obj.category.toUpperCase(), 'THEME/ ' );
+    this.createPageElements = function (post,author,category ) {
+        recipePage.style.display = 'none';
+        this.recipePageContainer = tagCreator('div', recipePage, 'class', 'recipe-page-container');
+        const breadCrumbs = new BreadCrumbs();
+        breadCrumbs.createBc(this.recipePageContainer, post.category.toUpperCase(), 'THEME/ ' );
 
-            const recipePageHeader = tagCreator('div', this.recipePageContainer, 'class', 'recipe-page-header'),
-                  ingredientsContainer = tagCreator('div', recipePageHeader, 'class', 'ingredients-container'),
-                  recipeTitle = tagCreator('h1', ingredientsContainer, 'class', 'recipe-title');
-            recipeTitle.appendChild(document.createTextNode(obj.title));
-            const ingredients = tagCreator('ol', ingredientsContainer, 'class', 'ingredients-list'),
-                  recipeImage = tagCreator('img', recipePageHeader, 'class', 'recipe-image', 'src', obj.src); 
-              
-            function createIngredients(li) {
-                if (li) {
-                    li.forEach(function(element){
-                        let li = document.createElement('li');
-                        li.setAttribute('class', 'ingredients-item');
-                        li.innerHTML = element;
-                        ingredients.appendChild(li);
-                    })
-                }
+        const recipePageHeader = tagCreator('div', this.recipePageContainer, 'class', 'recipe-page-header'),
+              ingredientsContainer = tagCreator('div', recipePageHeader, 'class', 'ingredients-container'),
+              recipeTitle = tagCreator('h1', ingredientsContainer, 'class', 'recipe-title');
+        recipeTitle.appendChild(document.createTextNode(post.title));
+        const ingredients = tagCreator('ol', ingredientsContainer, 'class', 'ingredients-list'),
+              recipeImage = tagCreator('img', recipePageHeader, 'class', 'recipe-image', 'src', post.src); 
+          
+        function createIngredients(li) {
+            if (li) {
+                li.forEach(function(element){
+                    let li = document.createElement('li');
+                    li.setAttribute('class', 'ingredients-item');
+                    li.innerHTML = element;
+                    ingredients.appendChild(li);
+                })
             }
-            createIngredients(obj.ingredients);
+        }
+        createIngredients(post.ingredients);
 
-            const recipeBody = tagCreator('div', this.recipePageContainer, 'class', 'recipe-body'),
-                  recipeBodyArticle = tagCreator('p', recipeBody, 'class', 'recipe-body-article');
-            recipeBodyArticle.appendChild(document.createTextNode(obj.postBody));
-            recipeBody.appendChild(recipeBodyArticle);
-            const recipeFooter = tagCreator('div', this.recipePageContainer, 'class', 'recipe-footer');
-            recipeFooter.appendChild(author); 
-            category.classList.remove('article-category');
-            category.classList.add('recipe-page-category')
-            recipeFooter.appendChild(category);
+        const recipeBody = tagCreator('div', this.recipePageContainer, 'class', 'recipe-body'),
+              recipeBodyArticle = tagCreator('p', recipeBody, 'class', 'recipe-body-article');
+        recipeBodyArticle.appendChild(document.createTextNode(post.postBody));
+        recipeBody.appendChild(recipeBodyArticle);
+        const recipeFooter = tagCreator('div', this.recipePageContainer, 'class', 'recipe-footer');
+        recipeFooter.appendChild(author); 
+        category.classList.remove('article-category');
+        category.classList.add('recipe-page-category')
+        recipeFooter.appendChild(category);
     } 
     this.showRecipePage = function() {
         let allRecipe = document.querySelectorAll('.recipe-page-container');

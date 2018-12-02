@@ -13,6 +13,7 @@ const about = document.querySelector('#about');
 const aboutPageSection = document.querySelector('.about-page-section');
 const loginPageSection = document.querySelector('.login-page-section');
 const login = document.querySelector('#login');
+login.innerHTML = 'Login';
 const recipePage = document.querySelector('.recipe-page');
 const slider = document.querySelector('.food-slider');
 const searchContainer = document.querySelector('.search-container');

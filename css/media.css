@@ -150,7 +150,9 @@
     .recipe-page-header,
     .form-container,
     .input-img,
-    .button-wp  {
+    .button-wp,
+    .fb, .tw, .gl
+      {
         display: block;
     }
 
@@ -290,6 +292,15 @@
     .theme:hover .nav-submenu {
         position: relative;
         right: 30px;
+    }
+
+    .fb {
+        margin: 40px auto 5px;
+    }
+
+    .gl, 
+    .tw {
+        margin: 0 auto 5px;
     }
 
     .footer {

@@ -135,21 +135,18 @@ const posts = [
     {
         postID: 6,
         src: "../img/POSTS/snack/snack_1.jpg",
-        userID: 1,
+        userID: 3,
         category: "Snack",
         categoryHref: '#',
         href: '#',
-        title: "Vegan roasted garlic & tomato lentil salad",
-        postBody: "This Roasted Garlic & Tomato Lentil Salad is the \
-        perfect vegan cold lentil salad that everyone will love! With \
-        roasted garlic, oven roasted tomatoes and onions, this is one you \
-        don’t want to miss. You guys are going to love this Roasted Garlic & \
-        Tomato Lentil Salad!\
-        \
-        I had no intention of publishing this recipe today, but I couldn’t \
-        stop myself.  It is just that good.\
-        \
-        The last few days I’ve been a bit under the weather.", 
+        title: "Some tasty recipe",
+        postBody: "This quick meal idea is ideal for busy days. Perfect for a filling \
+        lunch or fancy breakfast.", 
+        ingredients: [
+            '1 medium beetroot', '50g baby spinach', '1/2 small red onion, thinly sliced', '75g feta, crumbled',
+            '1/4 cup walnuts, lightly toasted', '2 tablespoons orange juice', '1 tablespoon olive oil', '1/2 teaspoon dijon mustard',
+            'Salt and pepper, to season.'
+        ]
     },
     {
         postID: 7,
@@ -160,7 +157,12 @@ const posts = [
         href: '#',
         title: "Sausages wuth poached egg",
         postBody: "This quick meal idea is ideal for busy days. Perfect for a filling \
-        lunch or fancy breakfast.", 
+        lunch or fancy breakfast.",
+        ingredients: [
+            '1 medium beetroot', '50g baby spinach', '1/2 small red onion, thinly sliced', '75g feta, crumbled',
+            '1/4 cup walnuts, lightly toasted', '2 tablespoons orange juice', '1 tablespoon olive oil', '1/2 teaspoon dijon mustard',
+            'Salt and pepper, to season.'
+        ] 
     },
     {
         postID: 8,

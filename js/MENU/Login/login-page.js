@@ -28,29 +28,29 @@ function LoginPage () {
         submit.setAttribute('id', 'sign-up');
         submit.setAttribute('onclick', 'false');
 
-        // const loginForm =  tagCreator('div', formDiv, 'class', 'login-form');
-        // loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
-        // loginTitle.innerHTML = 'Or';
-        // const buttonFb = tagCreator('button', loginForm, 'class', 'login-button fb'),
-        // buttonGoogle = tagCreator('button', loginForm, 'class', 'login-button gl'),
-        // buttonTwitter = tagCreator('button', loginForm, 'class', 'login-button tw');
-        // buttonFb.innerHTML = 'Log in with facebook';
-        // buttonGoogle.innerHTML = 'Log in with Google+';
-        // buttonTwitter.innerHTML = 'Log in with Twitter';
-                const loginBody = tagCreator('div', formDiv, 'class', 'signup-body');
-                const loginForm =  tagCreator('form', loginBody, 'class', 'login-form'),
-                loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
-                loginTitle.innerHTML = 'Or';
-                const loginUserName = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'text');
-                loginUserName.setAttribute('placeholder', 'Username or email');
-                loginUserName.setAttribute('id', 'login-user-name');
-                const loginPassword = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'password');
-                loginPassword.setAttribute('placeholder', 'Password');
-                loginPassword.setAttribute('id', 'login-user-password');
-                const loginSubmit = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'submit');
-                loginSubmit.setAttribute('value', 'Log in');
-                loginSubmit.setAttribute('onclick', 'false');
-                loginSubmit.setAttribute('id', 'log-in');
+        const loginForm =  tagCreator('div', formDiv, 'class', 'login-form');
+        loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
+        loginTitle.innerHTML = 'Or';
+        const buttonFb = tagCreator('button', loginForm, 'class', 'login-button fb'),
+        buttonGoogle = tagCreator('button', loginForm, 'class', 'login-button gl'),
+        buttonTwitter = tagCreator('button', loginForm, 'class', 'login-button tw');
+        buttonFb.innerHTML = 'Log in with facebook';
+        buttonGoogle.innerHTML = 'Log in with Google+';
+        buttonTwitter.innerHTML = 'Log in with Twitter';
+                // const loginBody = tagCreator('div', formDiv, 'class', 'signup-body');
+                // const loginForm =  tagCreator('form', loginBody, 'class', 'login-form'),
+                // loginTitle =  tagCreator('span', loginForm, 'class', 'login-title');
+                // loginTitle.innerHTML = 'Or';
+                // const loginUserName = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'text');
+                // loginUserName.setAttribute('placeholder', 'Username or email');
+                // loginUserName.setAttribute('id', 'login-user-name');
+                // const loginPassword = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'password');
+                // loginPassword.setAttribute('placeholder', 'Password');
+                // loginPassword.setAttribute('id', 'login-user-password');
+                // const loginSubmit = tagCreator('input', loginForm, 'class', 'signup-items', 'type', 'submit');
+                // loginSubmit.setAttribute('value', 'Log in');
+                // loginSubmit.setAttribute('onclick', 'false');
+                // loginSubmit.setAttribute('id', 'log-in');
 
     }
     createElements();
@@ -71,7 +71,6 @@ function LoginPage () {
             contactsPageSection.style.display = 'none';
             loginPageSection.style.display = 'none';
             userPageSection.style.display = 'block';  
-            login.innerHTML = 'My Profile';
 
             if (!this.container) {
                 loginPageSection.style.display = 'none';
